@@ -1,26 +1,31 @@
-var timerEl = document.getElementById('countdown');
-var mainEl = document.getElementById('main');
+var timerEl = document.getElementById("countdown");
+var mainEl = document.getElementById("main");
 
 var message =
-  'Some say the world will end in 🔥, Some say in ice. From what I’ve tasted of desire, I hold with those who favor fire. But if it had to perish twice, I think I know enough of hate. To say that for destruction ice, Is also great, And would suffice.';
-var words = message.split(' ');
+  "Some say the world will end in 🔥, Some say in ice. From what I’ve tasted of desire, I hold with those who favor fire. But if it had to perish twice, I think I know enough of hate. To say that for destruction ice, Is also great, And would suffice.";
+var words = message.split(" ");
 
 function countdown() {
   var timeLeft = 5;
 
   // TODO: Add a comment describing the functionality of the setInterval() method:
+  // setInterval() method will run the code block repeatedly in given time
   var timeInterval = setInterval(function () {
     // TODO: Add comments describing the functionality of the `if` statement:
+    // if will check the statement and it will run the code when the statement is true
     if (timeLeft > 1) {
-      timerEl.textContent = timeLeft + ' seconds remaining';
+      timerEl.textContent = timeLeft + " seconds remaining";
       timeLeft--;
     } // TODO: Add comments describing the functionality of the `else if` statement:
+    // if you have to check another one or more, you can use 'else if' this also act like the
+    // if statement. It run the code block if the statement is true;
     else if (timeLeft === 1) {
-      timerEl.textContent = timeLeft + ' second remaining';
+      timerEl.textContent = timeLeft + " second remaining";
       timeLeft--;
     } // TODO: Add comments describing the functionality of the `else` statement:
+    // 'else' run the code block by default when none of the statement true in if and else if
     else {
-      timerEl.textContent = '';
+      timerEl.textContent = "";
       clearInterval(timeInterval);
       displayMessage();
     }
